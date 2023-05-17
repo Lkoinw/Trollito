@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Editor": {
+      "commandName": "Executable",
+      "executablePath": "$(GameFolder)\\bin\\Win64_Shipping_wEditor\\TaleWorlds.MountAndBlade.Launcher.exe",
+      "workingDirectory": "$(GameFolder)\\bin\\Win64_Shipping_wEditor",
+      "nativeDebugging": true
+    },
+    "Client": {
+      "commandName": "Executable",
+      "executablePath": "$(GameFolder)\\bin\\Win64_Shipping_Client\\TaleWorlds.MountAndBlade.Launcher.exe",
+      "workingDirectory": "$(GameFolder)\\bin\\Win64_Shipping_Client",
+      "nativeDebugging": true
+    }
+  }
+}

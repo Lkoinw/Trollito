@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ <!-- WeaponDescription order is fixed, don't change it. -->
+
+<CraftingTemplates>
+
+	<CraftingTemplate id="hda_TrollMace"
+					  item_type="OneHandedWeapon"
+					  modifier_group="mace"
+					  item_holsters="mace_right_hip:axe_right_hip_2:axe_right_hip:axe_back"
+					  default_item_holster_position_offset="0,0,-0.40"
+					  use_weapon_as_holster_mesh="true">
+		<PieceDatas>
+			<PieceData piece_type="Handle"
+					   build_order="0" />
+			<PieceData piece_type="Blade"
+					   build_order="1" />
+		</PieceDatas>
+		<WeaponDescriptions>
+			<WeaponDescription id="hda_TrollMace" />
+		</WeaponDescriptions>
+		<StatsData>
+			<StatData stat_type="Weight"
+					  max_value="100.0" />
+			<StatData stat_type="WeaponReach"
+					  max_value="300" />
+			<StatData stat_type="ThrustSpeed"
+					  max_value="200" />
+			<StatData stat_type="SwingSpeed"
+					  max_value="200" />
+			<StatData stat_type="ThrustDamage"
+					  max_value="500" />
+			<StatData stat_type="SwingDamage"
+					  max_value="500" />
+			<StatData stat_type="Handling"
+					  max_value="500" />
+			<!--<StatData stat_type="FollowUp" max_value="200" />-->
+		</StatsData>
+		<UsablePieces>
+			<UsablePiece piece_id="cavetroll_hammer_head_d"
+						 mp_piece="true" />
+			<UsablePiece piece_id="cavetroll_hammer_handle_d"
+						 mp_piece="true" />
+		</UsablePieces>
+	</CraftingTemplate>
+
+</CraftingTemplates>
+
+<!--
+<StatsData>
+  <StatData stat_type="Weight" max_value="7.0" />
+  <StatData stat_type="WeaponReach" max_value="300" />
+  <StatData stat_type="ThrustSpeed" max_value="200" />
+  <StatData stat_type="SwingSpeed" max_value="200" />
+  <StatData stat_type="ThrustDamage" max_value="500" />
+  <StatData stat_type="SwingDamage" max_value="500" />
+  <StatData stat_type="Handling" max_value="200" />
+  <StatData stat_type="FollowUp" max_value="200" />
+  <StatData stat_type="MissileDamage" max_value="500" />
+  <StatData stat_type="MissileSpeed" max_value="200" />
+  <StatData stat_type="Accuracy" max_value="100" />
+</StatsData>
+-->

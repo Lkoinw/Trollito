@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<WeaponDescriptions>
+  <WeaponDescription id="hda_TrollMace"
+                     weapon_class="Mace"
+                     item_usage_features="onehanded:block:shield:tipdraw:swing:thrust">
+    <WeaponFlags>
+      <WeaponFlag value="MeleeWeapon"/>
+    </WeaponFlags>
+    <AvailablePieces>
+      <AvailablePiece id="cavetroll_hammer_head_d"/>
+      <AvailablePiece id="cavetroll_hammer_handle_d"/>
+      <!-- AvailablePieces,Mace -->
+    </AvailablePieces>
+  </WeaponDescription>
+
+</WeaponDescriptions>

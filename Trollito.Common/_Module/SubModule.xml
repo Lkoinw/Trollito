@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/BUTR/Bannerlord.XmlSchemas/master/SubModule.xsd" >
+  <Id value="Trollito.Editor" />
+  <Name value="Trollito.Editor" />
+  <Version value="v0.0.1.0" />
+  <DefaultModule value="false" />
+  <ModuleCategory value="Singleplayer"/>
+  <ModuleType value="Community" />
+  <DependedModules>
+    <DependedModule Id="Native" />
+  </DependedModules>
+  <!-- Community Dependency Metadata -->
+  <!-- https://github.com/BUTR/Bannerlord.BUTRLoader#for-modders -->
+  <DependedModuleMetadatas>
+    <DependedModuleMetadata id="Native" order="LoadBeforeThis" />
+  </DependedModuleMetadatas>
+  <!-- Community Dependency Metadata -->
+  <SubModules>
+		<SubModule>
+			<Name value="Trollito" />
+			<DLLName value="Trollito.Common.dll" />
+			<SubModuleClassType value="Trollito.Common.SubModule" />
+			<Tags />
+		</SubModule>
+  </SubModules>
+	<Xmls>
+		<XmlNode>
+			<XmlName id="GameText" path="module_strings"/>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="Monsters" path="monsters"/>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="NPCCharacters" path="spnpccharacters"/>
+    </XmlNode>
+		<XmlNode>
+			<XmlName id="Items" path="test_items"/>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="Items" path="hda_weapons"/>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="WeaponDescriptions" path="hda_weapon_descriptions"/>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="CraftingTemplates" path="hda_crafting_templates"/>
+		</XmlNode>
+		<XmlNode>
+			<XmlName id="CraftingPieces" path="hda_crafting_pieces"/>
+		</XmlNode>
+	</Xmls>
+</Module>

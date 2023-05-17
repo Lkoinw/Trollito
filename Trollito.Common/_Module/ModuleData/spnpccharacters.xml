@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NPCCharacters>
+	<NPCCharacter id="angmar_troll_a"
+					  default_group="Infantry"
+					  level="6"
+					  name="{=AnPi1}Troll of Angmar"
+					  race="troll"
+					  occupation="Soldier"
+					  is_basic_troop="true"
+					  culture="Culture.khuzait">
+		<face>
+			<BodyProperties version="4" age="22.19" weight="0.5" build="0.5"  key="FFC000000000000079766434475CDCBAC34E866255A096777441DA49838BF6A50077760307A7B7A500000000000000000000000000000000000000003CFC0000"  />
+		</face>
+		<skills>
+			<skill id="Athletics"
+				   value="200" />
+			<skill id="Riding"
+				   value="0" />
+			<skill id="OneHanded"
+				   value="200" />
+			<skill id="TwoHanded"
+				   value="10" />
+			<skill id="Polearm"
+				   value="20" />
+			<skill id="Bow"
+				   value="5" />
+			<skill id="Crossbow"
+				   value="0" />
+			<skill id="Throwing"
+				   value="10" />
+		</skills>
+		<upgrade_targets>
+			<upgrade_target id="NPCCharacter.sturgian_warrior" />
+			<upgrade_target id="NPCCharacter.sturgian_woodsman" />
+		</upgrade_targets>
+		<Equipments>
+			<EquipmentRoster>
+				<equipment slot="Item0"
+                   id="Item.cave_troll_hammer_d" />
+			</EquipmentRoster>
+		</Equipments>
+	</NPCCharacter>
+	<!-- #fin D'Angmar-->
+</NPCCharacters>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+	<Item id="troll_club"
+				name="Troll Club"
+				body_name="bo_mace_a"
+				recalculate_body="true"
+				mesh="aza"
+				culture="Culture.empire"
+				value="100"
+				weight="50"
+				Type="TwoHandedWeapon"
+				item_holsters="axe_back">
+		<ItemComponent>
+			<Weapon weapon_class="TwoHandedMace"
+							weapon_balance="180"
+							thrust_speed="70"
+							speed_rating="70"
+							missile_speed="0"
+							weapon_length="80"
+							swing_damage="500"
+							swing_damage_type="Blunt"
+							item_usage="twohanded_axe"
+							physics_material="wood_weapon">
+				<WeaponFlags 
+							MeleeWeapon="true"
+							BonusAgainstShield="true"
+							CanPenetrateShield="true"
+							CanKnockDown="true"
+							CanDismount="true" />
+			</Weapon>
+		</ItemComponent>
+	</Item>
+
+
+	<Item id="chicken"
+			 name="{=8el5a3sF}Chicken"
+			 mesh="chicken_mesh"
+			 item_category="horse"
+			 value="50"
+			 weight="5"
+			 Type="Horse">
+		<ItemComponent>
+			<Horse monster="Monster.chicken"
+             maneuver="30"
+             speed="10"
+             charge_damage="5"
+             body_length="120" />
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+	<Item id="chicken_king"
+			 name="{=8el5a3sF}Chicken King"
+			 mesh="chicken_mesh"
+			 item_category="horse"
+			 value="500"
+			 weight="5"
+			 Type="Horse">
+		<ItemComponent>
+			<Horse monster="Monster.chicken_king"
+             maneuver="30"
+             speed="10"
+             charge_damage="80"
+             body_length="600"/>
+		</ItemComponent>
+		<Flags Civilian="true" />
+	</Item>
+</Items>

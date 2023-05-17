@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- multiplier:            Captain only: This number is multiplied with the BotsPerFormation setting to get the final amount of troops to spawn. -->
+<!-- cost:                  Skirmish only: The gold cost of this troop. -->
+<!-- armor:                 This armor value is applied to every body part, regardless of equipment. -->
+<!-- movement_speed:        Goes from 0.0 to 1.0. This will be multiplied with 'bipedal_speed_multiplier' (in native_parameters.xml).        Human only. -->
+<!-- combat_movement_speed: Goes from 0.0 to 1.0. This will be multiplied with 'movement_speed' during combat.    Human only. -->
+<!-- acceleration:          Goes from 0.0 to 1.0. This will be multiplied with 'bipedal_acceleration_multiplier'. Human only. -->
+<!-- hitpoints:             Goes from 1 to infinity. Default is 100. Human only. -->
+<MPClassDivisions>
+  <!-- VLANDIA -->
+  <MPClassDivision id="mp_light_infantry_vlandia"
+                   hero="mp_light_infantry_vlandia_hero"
+                   troop="mp_light_infantry_vlandia_troop"
+                   hero_idle_anim="act_vlandia_mp_peasant_levy_idle"
+                   troop_idle_anim="act_idle_unarmed_1"
+                   multiplier="0.92"
+                   cost="80"
+                   casual_cost="90"
+                   icon="Infantry_Light"
+                   melee_ai="30"
+                   ranged_ai="30"
+                   armor="7"
+                   movement_speed="0.82"
+                   combat_movement_speed="0.9"
+                   acceleration="1.8">
+    <Perks>
+      <!-- First perks-->
+		<Perk game_mode="Battle, NewBattle, ClassicBattle, Skirmish, Siege, TeamDeathmatch, Duel"
+		      name="Mage"
+		      description="You're a wizard Harry"
+		      icon="PerkToughness"
+		      perk_list="1">
+			<OnSpawnEffect type="AlternativeEquipmentOnSpawn"
+			               slot="Item0"
+			               item="mp_vlandian_long_sword"/>
+		</Perk>
+    </Perks>
+  </MPClassDivision>
+  <!-- EMPIRE -->
+  <MPClassDivision id="mp_skirmisher_empire"
+                   hero="mp_skirmisher_empire_hero"
+                   troop="mp_skirmisher_empire_troop"
+                   hero_idle_anim="act_empire_mp_recruit_idle"
+                   troop_idle_anim="act_idle_unarmed_1"
+                   multiplier="0.82"
+                   cost="100"
+                   icon="Special_JavelinThrower"
+                   melee_ai="30"
+                   ranged_ai="80"
+                   armor="10"
+                   movement_speed="0.82"
+                   combat_movement_speed="0.9"
+                   acceleration="1.8">
+     <Perks>
+      <!-- First perks-->
+		<Perk game_mode="Battle, NewBattle, ClassicBattle, Skirmish, Siege, TeamDeathmatch, Duel"
+		      name="Mage"
+		      description="You're a wizard Harry"
+		      icon="PerkToughness"
+		      perk_list="1">
+			<OnSpawnEffect type="AlternativeEquipmentOnSpawn"
+			               slot="Item0"
+			               item="mp_vlandian_long_sword"/>
+		</Perk>
+    </Perks>
+  </MPClassDivision>
+  <!-- KHUZAIT -->
+  <MPClassDivision id="mp_light_infantry_khuzait"
+                   hero="mp_light_infantry_khuzait_hero"
+                   troop="mp_light_infantry_khuzait_troop"
+                   hero_idle_anim="act_khuzait_mp_rabble_idle"
+                   troop_idle_anim="act_idle_unarmed_1"
+                   multiplier="0.89"
+                   cost="90"
+                   icon="Infantry_Light"
+                   melee_ai="30"
+                   ranged_ai="30"
+                   armor="6"
+                   movement_speed="0.81"
+                   combat_movement_speed="0.9"
+                   acceleration="1.8">
+    <Perks>
+      <!-- First perks-->
+		<Perk game_mode="Battle, NewBattle, ClassicBattle, Skirmish, Siege, TeamDeathmatch, Duel"
+		      name="Mage"
+		      description="You're a wizard Harry"
+		      icon="PerkToughness"
+		      perk_list="1">
+			<OnSpawnEffect type="AlternativeEquipmentOnSpawn"
+			               slot="Item0"
+			               item="mp_vlandian_long_sword"/>
+		</Perk>
+    </Perks>
+  </MPClassDivision>
+  <!-- ASERAI -->
+  <MPClassDivision id="mp_light_infantry_aserai"
+                   hero="mp_light_infantry_aserai_hero"
+                   troop="mp_light_infantry_aserai_troop"
+                   hero_idle_anim="act_aserai_mp_tribal_warrior_idle"
+                   troop_idle_anim="act_idle_1h_with_shield_1"
+                   multiplier="0.77"
+                   cost="100"
+                   icon="Infantry_Light"
+                   melee_ai="40"
+                   ranged_ai="40"
+                   armor="15"
+                   movement_speed="0.81"
+                   combat_movement_speed="0.9"
+                   acceleration="2.4">
+    <Perks>
+      <!-- First perks-->
+		<Perk game_mode="Battle, NewBattle, ClassicBattle, Skirmish, Siege, TeamDeathmatch, Duel"
+		      name="Mage"
+		      description="You're a wizard Harry"
+		      icon="PerkToughness"
+		      perk_list="1">
+			<OnSpawnEffect type="AlternativeEquipmentOnSpawn"
+			               slot="Item0"
+			               item="mp_vlandian_long_sword"/>
+		</Perk>
+    </Perks>
+  </MPClassDivision>
+  <!-- Sturgia -->
+  <MPClassDivision id="mp_light_infantry_sturgia"
+                   hero="mp_light_infantry_sturgia_hero"
+                   troop="mp_light_infantry_sturgia_troop"
+                   hero_idle_anim="act_sturgia_mp_warrior_idle"
+                   troop_idle_anim="act_idle_unarmed_1"
+                   multiplier="0.88"
+                   cost="100"
+                   icon="Infantry_Light"
+                   melee_ai="40"
+                   ranged_ai="40"
+                   armor="17"
+                   movement_speed="0.81"
+                   combat_movement_speed="0.8"
+                   acceleration="2.4">
+    <Perks>
+      <!-- First perks-->
+		<Perk game_mode="Battle, NewBattle, ClassicBattle, Skirmish, Siege, TeamDeathmatch, Duel"
+		      name="Mage"
+		      description="You're a wizard Harry"
+		      icon="PerkToughness"
+		      perk_list="1">
+			<OnSpawnEffect type="AlternativeEquipmentOnSpawn"
+			               slot="Item0"
+			               item="mp_vlandian_long_sword"/>
+		</Perk>
+    </Perks>
+  </MPClassDivision>
+  <!-- BATTANIA -->
+  <MPClassDivision id="mp_light_infantry_battania"
+                   hero="mp_light_infantry_battania_hero"
+                   troop="mp_light_infantry_battania_troop"
+                   hero_idle_anim="act_battania_mp_clan_warrior_maceperk_idle"
+                   troop_idle_anim="act_idle_unarmed_1"
+                   multiplier="0.88"
+                   cost="100"
+                   icon="Infantry_Light"
+                   melee_ai="40"
+                   ranged_ai="40"
+                   armor="15"
+                   movement_speed="0.82"
+                   combat_movement_speed="0.9"
+                   acceleration="2.4">
+    <Perks>
+      <!-- First perks-->
+		<Perk game_mode="Battle, NewBattle, ClassicBattle, Skirmish, Siege, TeamDeathmatch, Duel"
+		      name="Mage"
+		      description="You're a wizard Harry"
+		      icon="PerkToughness"
+		      perk_list="1">
+			<OnSpawnEffect type="AlternativeEquipmentOnSpawn"
+			               slot="Item0"
+			               item="mp_vlandian_long_sword"/>
+		</Perk>
+    </Perks>
+  </MPClassDivision>
+
+	<MPClassDivision id="mp_shock_infantry_battania"
+                   hero="mp_big_troll"
+                   troop="mp_troll"
+                   hero_idle_anim="act_battania_mp_clan_warrior_maceperk_idle"
+                   troop_idle_anim="act_idle_unarmed_1"
+                   multiplier="0.1"
+                   cost="200"
+                   icon="Infantry_Light"
+                   melee_ai="100"
+                   ranged_ai="100"
+								   armor="50"
+                   hitpoints="600"
+                   movement_speed="0.6"
+                   combat_movement_speed="0.6"
+                   acceleration="2.4">
+		<Perks>
+			<!-- First perks-->
+			<Perk game_mode="all"
+						name="Chicken"
+						description="You're a chicken Harry"
+						icon="PerkGeneral"
+						perk_list="1">
+				<ConditionalEffect>
+					<Conditions>
+						<Condition type="AgentStatus"
+                       agent_status="OnFoot" />
+					</Conditions>
+					<Effects>
+						<Effect type="DrivenProperty"
+                    driven_property="MaxSpeedMultiplier"
+                    value="1.0" />
+					</Effects>
+				</ConditionalEffect>
+			</Perk>
+		</Perks>
+	</MPClassDivision>
+</MPClassDivisions>

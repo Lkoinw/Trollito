@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trollito.Common", "Trollito.Common\Trollito.Common.csproj", "{FA120DB7-B024-4637-9A5F-27C7016A4C6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA120DB7-B024-4637-9A5F-27C7016A4C6E}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{FA120DB7-B024-4637-9A5F-27C7016A4C6E}.Debug|Any CPU.Build.0 = Debug|x64
+		{FA120DB7-B024-4637-9A5F-27C7016A4C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA120DB7-B024-4637-9A5F-27C7016A4C6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89212AAA-FE5D-48EB-BB60-5CAFDDDC20D6}
+	EndGlobalSection
+EndGlobal

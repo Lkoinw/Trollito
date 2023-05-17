@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+	<CraftedItem id="cave_troll_hammer_d"
+				 name="{=ArSp1}Cave Troll hammer"
+				 crafting_template="hda_TrollMace"
+				 culture="Culture.khuzait"
+				 swing_speed="70">
+		<Pieces>
+			<Piece id="cavetroll_hammer_head_d"
+				   Type="Blade"
+				   scale_factor="100" />
+			<Piece id="cavetroll_hammer_handle_d"
+				   Type="Handle"
+				   scale_factor="100" />
+		</Pieces>
+	</CraftedItem>
+</Items>
