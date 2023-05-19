@@ -18,6 +18,7 @@ namespace Trollito.Common
         public override void OnBeforeMissionBehaviorInitialize(Mission mission)
         {
             base.OnBeforeMissionBehaviorInitialize(mission);
+            Mission.Current.AddMissionBehavior(new FlyingCarpetBehavior());
             //Mission.Current.AddMissionBehavior(new CollisionBoxVisualizer());
             //Mission.Current.AddMissionBehavior(new TestBonk());
         }
