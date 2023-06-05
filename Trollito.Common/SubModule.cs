@@ -1,6 +1,9 @@
 ﻿using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using Trollito.Common.Models;
+using Trollito.Common.Patch;
+using Trollito.Common.Troll;
 
 namespace Trollito.Common
 {
@@ -10,7 +13,7 @@ namespace Trollito.Common
 
         protected override void OnSubModuleLoad()
         {
-            CutThroughEveryonePatch.Patch();
+            TrollPatch.Patch();
             Debug.Print("Trollito Common initialized.", 0, Debug.DebugColor.Green);
             InformationManager.DisplayMessage(new InformationMessage("Trollito Common initialized.", Colors.Green));
         }
@@ -18,15 +21,13 @@ namespace Trollito.Common
         public override void OnBeforeMissionBehaviorInitialize(Mission mission)
         {
             base.OnBeforeMissionBehaviorInitialize(mission);
-            Mission.Current.AddMissionBehavior(new FlyingCarpetBehavior());
-            //Mission.Current.AddMissionBehavior(new CollisionBoxVisualizer());
-            //Mission.Current.AddMissionBehavior(new TestBonk());
+            Mission.Current.AddMissionBehavior(new TrollBehavior());
         }
 
         protected override void OnGameStart(Game game, IGameStarter gameStarter)
         {
-            gameStarter.AddModel(new TestAgentStatCalculateModel());
-            gameStarter.AddModel(new TestAgentApplyDamageModel());
+            gameStarter.AddModel(new TrollitoStatCalculateModel());
+            gameStarter.AddModel(new TrollitoApplyDamageModel());
         }
     }
 }

@@ -1,23 +1,48 @@
-﻿using TaleWorlds.Core;
+﻿using System;
+using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.ComponentInterfaces;
+using Logger = Trollito.Common.Utilities.Logger;
 
-namespace Trollito.Common
+namespace Trollito.Common.Models
 {
-    public class TestAgentApplyDamageModel : AgentApplyDamageModel
+    public class TrollitoApplyDamageModel : AgentApplyDamageModel
     {
-        public TestAgentApplyDamageModel()
+        public TrollitoApplyDamageModel()
         {
         }
 
         public override float CalculateDamage(in AttackInformation attackInformation, in AttackCollisionData collisionData, in MissionWeapon weapon, float baseDamage)
         {
-            if(weapon.IsEmpty && (attackInformation.AttackerAgentCharacter?.Name.ToString().ToLower().Contains("troll") ?? false))
+            if (attackInformation.AttackerAgentCharacter?.Name.ToString().ToLower().Contains("troll") ?? false)
             {
-                return baseDamage * 100;
+                if (weapon.IsEmpty)
+                {
+                    baseDamage *= 50;
+                }
+                if (attackInformation.IsVictimAgentMount)
+                {
+                    return 1f; // Reduce mount damage to prevent ragdolls going to hyperspace
+                }
+                else
+                {
+                    if (collisionData.CorrectSideShieldBlock) return Math.Min(baseDamage, 60);
+                    return Math.Min(baseDamage, 100);
+                }
             }
+
             return baseDamage;
+        }
+
+        public float CalculateDeltaAngle(float fromAngle, float toAngle)
+        {
+            float deltaAngle = (toAngle - fromAngle) % 360.0f;
+            if (deltaAngle < -180.0f)
+                deltaAngle += 360.0f;
+            else if (deltaAngle >= 180.0f)
+                deltaAngle -= 360.0f;
+            return deltaAngle;
         }
 
         public override void DecideMissileWeaponFlags(Agent attackerAgent, MissionWeapon missileWeapon, ref WeaponFlags missileWeaponFlags)
@@ -26,14 +51,31 @@ namespace Trollito.Common
 
         public override bool DecideCrushedThrough(Agent attackerAgent, Agent defenderAgent, float totalAttackEnergy, Agent.UsageDirection attackDirection, StrikeType strikeType, WeaponComponentData defendItem, bool isPassiveUsage)
         {
-            if(attackerAgent.Name.ToLower().Contains("troll")) return true;
+            if (attackerAgent.Name.ToLower().Contains("troll"))
+            {
+                bool blocked = false;
+                float totalDefense = 300f;
+                if (defendItem != null && defendItem.IsShield)
+                {
+                    totalDefense *= 2f;
+                    blocked = totalAttackEnergy < totalDefense;
+                }
+                InformationManager.DisplayMessage(new InformationMessage(defenderAgent?.Name + " " + (blocked ? "blocked!" : "didn't block"), Colors.Green));
+                if (blocked)
+                {
+                    ActionIndexCache action = ActionIndexCache.Create("act_strike_fall_back_heavy_back_rise");
+                    defenderAgent.SetActionChannel(0, action, false, 0UL, 0f, 1f, -0.2f, 0.4f, 0f, false, -0.1f, 0, true);
+                }
+                Logger.Log("Blocked = " + blocked);
+                return true;
+            }
 
             EquipmentIndex equipmentIndex = attackerAgent.GetWieldedItemIndex(Agent.HandIndex.OffHand);
             if (equipmentIndex == EquipmentIndex.None)
             {
                 equipmentIndex = attackerAgent.GetWieldedItemIndex(Agent.HandIndex.MainHand);
             }
-            WeaponComponentData weaponComponentData = ((equipmentIndex != EquipmentIndex.None) ? attackerAgent.Equipment[equipmentIndex].CurrentUsageItem : null);
+            WeaponComponentData weaponComponentData = equipmentIndex != EquipmentIndex.None ? attackerAgent.Equipment[equipmentIndex].CurrentUsageItem : null;
             if (weaponComponentData == null || isPassiveUsage || !weaponComponentData.WeaponFlags.HasAnyFlag(WeaponFlags.CanCrushThrough) || strikeType != StrikeType.Swing || attackDirection != Agent.UsageDirection.AttackUp)
             {
                 return false;
@@ -50,7 +92,7 @@ namespace Trollito.Common
         {
             if (attackerAgent.Name.ToLower().Contains("troll")) return true;
 
-            return MBMath.IsBetween((int)blow.VictimBodyPart, 0, 6) && ((!attackerAgent.HasMount && blow.StrikeType == StrikeType.Swing && blow.WeaponRecord.WeaponFlags.HasAnyFlag(WeaponFlags.CanHook)) || (blow.StrikeType == StrikeType.Thrust && blow.WeaponRecord.WeaponFlags.HasAnyFlag(WeaponFlags.CanDismount)));
+            return MBMath.IsBetween((int)blow.VictimBodyPart, 0, 6) && (!attackerAgent.HasMount && blow.StrikeType == StrikeType.Swing && blow.WeaponRecord.WeaponFlags.HasAnyFlag(WeaponFlags.CanHook) || blow.StrikeType == StrikeType.Thrust && blow.WeaponRecord.WeaponFlags.HasAnyFlag(WeaponFlags.CanDismount));
         }
 
         public override void CalculateCollisionStunMultipliers(Agent attackerAgent, Agent defenderAgent, bool isAlternativeAttack, CombatCollisionResult collisionResult, WeaponComponentData attackerWeapon, WeaponComponentData defenderWeapon, out float attackerStunMultiplier, out float defenderStunMultiplier)
@@ -77,7 +119,7 @@ namespace Trollito.Common
             if (attackerAgent.Name.ToLower().Contains("troll")) return true;
 
             AttackCollisionData attackCollisionData = collisionData;
-            return MBMath.IsBetween((int)attackCollisionData.VictimHitBodyPart, 0, 6) && !attackerWeapon.WeaponFlags.HasAnyFlag(WeaponFlags.CanKnockDown) && (attackerWeapon.IsConsumable || (blow.BlowFlag & BlowFlags.CrushThrough) != BlowFlags.None || (blow.StrikeType == StrikeType.Thrust && blow.WeaponRecord.WeaponFlags.HasAnyFlag(WeaponFlags.WideGrip)));
+            return MBMath.IsBetween((int)attackCollisionData.VictimHitBodyPart, 0, 6) && !attackerWeapon.WeaponFlags.HasAnyFlag(WeaponFlags.CanKnockDown) && (attackerWeapon.IsConsumable || (blow.BlowFlag & BlowFlags.CrushThrough) != BlowFlags.None || blow.StrikeType == StrikeType.Thrust && blow.WeaponRecord.WeaponFlags.HasAnyFlag(WeaponFlags.WideGrip));
         }
 
         public override bool CanWeaponKnockDown(Agent attackerAgent, Agent victimAgent, WeaponComponentData attackerWeapon, in Blow blow, in AttackCollisionData collisionData)
@@ -95,7 +137,7 @@ namespace Trollito.Common
             {
                 flag = true;
             }
-            return flag && blow.WeaponRecord.WeaponFlags.HasAnyFlag(WeaponFlags.CanKnockDown) && ((attackerWeapon.IsPolearm && blow.StrikeType == StrikeType.Thrust) || (attackerWeapon.IsMeleeWeapon && blow.StrikeType == StrikeType.Swing && MissionCombatMechanicsHelper.DecideSweetSpotCollision(collisionData)));
+            return flag && blow.WeaponRecord.WeaponFlags.HasAnyFlag(WeaponFlags.CanKnockDown) && (attackerWeapon.IsPolearm && blow.StrikeType == StrikeType.Thrust || attackerWeapon.IsMeleeWeapon && blow.StrikeType == StrikeType.Swing && MissionCombatMechanicsHelper.DecideSweetSpotCollision(collisionData));
         }
 
         public override float GetDismountPenetration(Agent attackerAgent, WeaponComponentData attackerWeapon, in Blow blow, in AttackCollisionData attackCollisionData)
@@ -161,6 +203,11 @@ namespace Trollito.Common
 
         public override float CalculateShieldDamage(in AttackInformation attackInformation, float baseDamage)
         {
+            if (attackInformation.AttackerAgentCharacter.Name.ToString().ToLower().Contains("troll"))
+            {
+                return baseDamage * 10f;
+            }
+
             baseDamage *= 1.25f;
             MissionMultiplayerFlagDomination missionBehavior = Mission.Current.GetMissionBehavior<MissionMultiplayerFlagDomination>();
             if (missionBehavior != null && missionBehavior.GetMissionType() == MissionLobbyComponent.MultiplayerGameType.Captain)
@@ -259,6 +306,10 @@ namespace Trollito.Common
             {
                 return true;
             }
+            if (blow.WeaponRecord.Weight >= 20)
+            {
+                return false;
+            }
 
             return MissionCombatMechanicsHelper.DecideAgentShrugOffBlow(victimAgent, collisionData, blow);
         }
@@ -293,7 +344,7 @@ namespace Trollito.Common
             {
                 return false;
             }
-            else if(attackerAgent.Name.ToLower().Contains("troll"))
+            else if (attackerAgent.Name.ToLower().Contains("troll"))
             {
                 return true;
             }

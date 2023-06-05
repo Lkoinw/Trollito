@@ -1,0 +1,224 @@
+<prefabs>
+	<game_entity name="troll_hit_plane" old_prefab_name="">
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000" />
+		<physics shape="bo_editor_plane" mass="1.000"/>
+		<components>
+			<!--<meta_mesh_component name="editor_plane_low">
+				<mesh name="editor_plane_low" material="tex_cavetrollpants"/>
+			</meta_mesh_component>
+			<meta_mesh_component name="editor_axis" position="0.000, 0.000, 0.000" 
+				rotation="0.000, 0.000, 0.000" scale="0.100, 0.100, 0.100" _index_="1"/>-->
+		</components>
+	</game_entity>
+
+	<game_entity name="bonk" old_prefab_name="">
+		<visibility_masks>
+			<visibility_mask name="no_shadow" value="true"/>
+		</visibility_masks>
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000" scale="0.200, 0.200, 0.200"/>
+		<physics shape="bo_troll_hammer_d"/>
+		<components>
+			<meta_mesh_component name="troll_hammer_head_d"/>
+		</components>
+	</game_entity>
+
+	<game_entity name="editor_cube" old_prefab_name="">
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000"/>
+		<physics shape="bo_editor_cube" mass="1.000"/>
+		<components>
+			<meta_mesh_component name="editor_cube"/>
+		</components>
+		<levels>
+			<level name="base"/>
+			<level name="level_1"/>
+			<level name="level_2"/>
+			<level name="level_3"/>
+			<level name="civilian"/>
+			<level name="siege"/>
+			<level name="looted"/>
+		</levels>
+		<additional_features>
+			<feature name="apply_factor_color_to_all_components" value="false"/>
+		</additional_features>
+	</game_entity>
+	<game_entity name="editor_cylinder" old_prefab_name="">
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000"/>
+		<physics mass="1.000"/>
+		<components>
+			<meta_mesh_component name="editor_cylinder"/>
+		</components>
+	</game_entity>
+	<game_entity name="editor_sphere" old_prefab_name="">
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000"/>
+		<physics mass="1.000"/>
+		<components>
+			<meta_mesh_component name="editor_sphere_uv"/>
+		</components>
+	</game_entity>
+	<game_entity name="editor_torus" old_prefab_name="">
+		<physics mass="1.000"/>
+		<components>
+			<meta_mesh_component name="editor_torus"/>
+		</components>
+	</game_entity>
+	<game_entity name="editor_cone" old_prefab_name="">
+		<visibility_masks>
+			<visibility_mask name="visible_only_when_editing" value="true"/>
+		</visibility_masks>
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000"/>
+		<physics mass="1.000"/>
+		<components>
+			<meta_mesh_component name="editor_cone"/>
+		</components>
+		<additional_features>
+			<feature name="apply_factor_color_to_all_components" value="false"/>
+		</additional_features>
+	</game_entity>
+	<game_entity name="editor_plane" old_prefab_name="">
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000"/>
+		<physics shape="bo_editor_plane" mass="1.000"/>
+		<components>
+			<meta_mesh_component name="editor_plane_low"/>
+		</components>
+	</game_entity>
+	<game_entity name="editor_plane_tess" old_prefab_name="">
+		<physics mass="1.000" shape="bo_editor_plane"/>
+		<components>
+			<meta_mesh_component name="editor_plane_high"/>
+		</components>
+	</game_entity>
+	<game_entity name="editor_marker" old_prefab_name="">
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000" scale="0.200, 0.200, 1.000"/>
+		<physics mass="1.000"/>
+		<components>
+			<meta_mesh_component name="editor_marker"/>
+		</components>
+		<levels>
+			<level name="base"/>
+		</levels>
+		<additional_features>
+			<feature name="apply_factor_color_to_all_components" value="false"/>
+		</additional_features>
+	</game_entity>
+	<game_entity name="editor_axis" old_prefab_name="">
+		<visibility_masks>
+			<visibility_mask name="visible_only_when_editing" value="true"/>
+		</visibility_masks>
+		<physics mass="1.000"/>
+		<components>
+			<meta_mesh_component name="editor_axis"/>
+		</components>
+	</game_entity>
+	<game_entity old_prefab_name="" name="camera_static">
+		<children>
+			<game_entity old_prefab_name="" name="camera_icon">
+				<components>
+					<meta_mesh_component name="icon_camera"/>
+				</components>
+				<physics mass="1.000"/>
+				<edit_mode_data selection_group_mask="0"/>
+				<transform rotation_euler="-1.571, 0.000, 0.000" position="0.000, 0.000, 1.000"/>
+				<visibility_masks>
+					<visibility_mask value="true" name="visible_only_when_editing"/>
+				</visibility_masks>
+			</game_entity>
+		</children>
+		<scripts>
+			<script name="camera_instance">
+				<variables>
+					<variable value="false" name="Show Display"/>
+					<variable value="0.000000" name="DOF Focus End"/>
+					<variable value="0.000000" name="DOF Focus"/>
+					<variable value="0.000000" name="DOF Focus Start"/>
+					<variable value="1000.000000" name="Far"/>
+					<variable value="0.010000" name="Near"/>
+					<variable value="256.000000" name="Height"/>
+					<variable value="256.000000" name="Width"/>
+					<variable value="60.000000" name="FOV(Degrees)"/>
+				</variables>
+			</script>
+		</scripts>
+		<physics mass="1.000"/>
+		<edit_mode_data selection_group_mask="0"/>
+		<tags>
+			<tag name="customcamera"/>
+			<tag name="camera_instance"/>
+		</tags>
+	</game_entity>
+	<game_entity name="water_plane" old_prefab_name="">
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000"/>
+		<physics shape="bo_editor_plane" mass="1.000"/>
+		<components>
+			<meta_mesh_component name="editor_plane_high"/>
+		</components>
+		<scripts>
+			<script name="water_body">
+				<variables>
+					<variable name="Water Prefab" value=""/>
+				</variables>
+			</script>
+		</scripts>
+		<additional_features>
+			<feature name="apply_factor_color_to_all_components" value="false"/>
+		</additional_features>
+	</game_entity>
+	<game_entity name="manual_test_prefab_entity" old_prefab_name="">
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000"/>
+		<physics shape="bo_editor_cube" mass="1.000"/>
+		<components>
+			<meta_mesh_component name="editor_cube"/>
+		</components>
+		<children>
+			<game_entity name="editor_cube" old_prefab_name="">
+				<transform position="1.000, 1.000, 1.000"/>
+				<physics shape="bo_editor_cube" mass="1.000"/>
+				<components>
+					<meta_mesh_component name="editor_cube"/>
+				</components>
+				<children>
+					<game_entity name="editor_cube" old_prefab_name="">
+						<transform position="1.000, 1.000, 1.000"/>
+						<physics shape="bo_editor_cube" mass="1.000"/>
+						<components>
+							<meta_mesh_component name="editor_cube"/>
+						</components>
+						<children>
+							<game_entity name="editor_cube" old_prefab_name="">
+								<transform position="1.000, 1.000, 1.000"/>
+								<physics shape="bo_editor_cube" mass="1.000"/>
+								<components>
+									<meta_mesh_component name="editor_cube"/>
+								</components>
+								<children>
+									<game_entity name="editor_cube" old_prefab_name="">
+										<transform position="1.000, 1.000, 1.000"/>
+										<physics shape="bo_editor_cube" mass="1.000"/>
+										<components>
+											<meta_mesh_component name="editor_cube"/>
+										</components>
+										<additional_features>
+											<feature name="apply_factor_color_to_all_components" value="false"/>
+										</additional_features>
+									</game_entity>
+								</children>
+								<additional_features>
+									<feature name="apply_factor_color_to_all_components" value="false"/>
+								</additional_features>
+							</game_entity>
+						</children>
+						<additional_features>
+							<feature name="apply_factor_color_to_all_components" value="false"/>
+						</additional_features>
+					</game_entity>
+				</children>
+				<additional_features>
+					<feature name="apply_factor_color_to_all_components" value="false"/>
+				</additional_features>
+			</game_entity>
+		</children>
+		<additional_features>
+			<feature name="apply_factor_color_to_all_components" value="false"/>
+		</additional_features>
+	</game_entity>
+</prefabs>
+

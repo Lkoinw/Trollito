@@ -2,7 +2,7 @@
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
-namespace Trollito.Common
+namespace Trollito.Common.TestStuff
 {
     public class TestBonk : MissionLogic
     {

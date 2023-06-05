@@ -8,6 +8,7 @@
 		<ModuleId>$(MSBuildProjectName)</ModuleId>
 		<ModuleName>Trollito.Editor</ModuleName>
 		<GameFolder>$(BANNERLORD_GAME_DIR)</GameFolder>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

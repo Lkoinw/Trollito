@@ -1,3 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <action_types>
+	<action name="act_troll_combo_attack" />
+	<action name="act_troll_swing_dance" />
+	<action name="act_troll_death_forward_1" />
+	<action name="act_troll_death_forward_2" />
+	<action name="act_troll_run_forward_1h" />
 </action_types>

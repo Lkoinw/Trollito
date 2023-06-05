@@ -17,8 +17,8 @@
                blade_width="25"
                physics_material="metal_weapon"
                body_name="bo_troll_hammer_d">
-			<Swing damage_type="Cut"
-             damage_factor="1" />
+			<Swing damage_type="Blunt"
+             damage_factor="2" />
     </BladeData>
 		<Flags>
 			<Flag name="CanCrushThrough" />

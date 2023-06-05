@@ -4,7 +4,7 @@
 				 name="{=ArSp1}Cave Troll hammer"
 				 crafting_template="hda_TrollMace"
 				 culture="Culture.khuzait"
-				 swing_speed="70">
+				 swing_speed="60">
 		<Pieces>
 			<Piece id="cavetroll_hammer_head_d"
 				   Type="Blade"

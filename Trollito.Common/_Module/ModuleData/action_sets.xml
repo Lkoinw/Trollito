@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <action_sets>
 	<action_set id="as_troll_warrior" movement_system="bipedal" skeleton="troll_skeleton">
+		<action animation="troll_combo_attack" type="act_troll_combo_attack"/>
+		<action animation="troll_swing_dance" type="act_troll_swing_dance"/>
+		<action animation="troll_death_forward_1" type="act_troll_death_forward_1"/>
+		<action animation="troll_death_forward_2" type="act_troll_death_forward_2"/>
+		<action animation="troll_run_forward_1h" type="act_troll_run_forward_1h"/>
+
 		<action animation="pose_cavalry_sword" type="act_troop_cavalry_sword"/>
 		<action animation="inventory_idle_start" type="act_inventory_idle_start"/>
 		<action animation="inventory_idle" type="act_inventory_idle"/>
@@ -380,7 +386,7 @@
 		<action animation="crouch_walk_adder" type="act_crouch_walk_right_to_left_adder"/>
 		<action animation="crouch_walk_adder" type="act_crouch_walk_left_to_right_adder"/>
 		<action animation="stand_non_combat" type="act_run_idle_unarmed"/>
-		<action animation="run_forward_unarmed" type="act_run_forward_unarmed"/>
+		<action animation="troll_run_forward_unarmed" type="act_run_forward_unarmed"/>
 		<action animation="run_right_unarmed" type="act_run_right_unarmed"/>
 		<action animation="run_left_unarmed" type="act_run_left_unarmed"/>
 		<action animation="run_backward_unarmed" type="act_run_backward_unarmed"/>
@@ -390,7 +396,7 @@
 		<action animation="run_left_to_right_unarmed" type="act_run_left_to_right_unarmed"/>
 		<action animation="turn_unarmed" type="act_turn_unarmed"/>
 		<action animation="stand_unarmed_left_stance" type="act_run_idle_unarmed_left_stance"/>
-		<action animation="run_forward_unarmed" type="act_run_forward_unarmed_left_stance"/>
+		<action animation="troll_run_forward_unarmed" type="act_run_forward_unarmed_left_stance"/>
 		<action animation="run_right_unarmed" type="act_run_right_unarmed_left_stance"/>
 		<action animation="run_left_unarmed" type="act_run_left_unarmed_left_stance"/>
 		<action animation="run_backward_unarmed" type="act_run_backward_unarmed_left_stance"/>
@@ -660,7 +666,7 @@
 		<action animation="run_left_to_right_heavy_thrown" type="act_run_left_to_right_heavy_thrown_left_stance"/>
 		<action animation="turn_unarmed_left_stance" type="act_turn_heavy_thrown_left_stance"/>
 		<action animation="stand_non_combat" type="act_walk_idle_unarmed"/>
-		<action animation="walk_forward_unarmed" type="act_walk_forward_unarmed"/>
+		<action animation="troll_walk_forward_unarmed" type="act_walk_forward_unarmed"/>
 		<action animation="walk_right_unarmed" type="act_walk_right_unarmed"/>
 		<action animation="walk_left_unarmed" type="act_walk_left_unarmed"/>
 		<action animation="walk_backward_unarmed" type="act_walk_backward_unarmed"/>
@@ -669,7 +675,7 @@
 		<action animation="walk_right_to_left_unarmed" type="act_walk_right_to_left_unarmed"/>
 		<action animation="walk_left_to_right_unarmed" type="act_walk_left_to_right_unarmed"/>
 		<action animation="stand_unarmed_left_stance" type="act_walk_idle_unarmed_left_stance"/>
-		<action animation="walk_forward_unarmed" type="act_walk_forward_unarmed_left_stance"/>
+		<action animation="troll_walk_forward_unarmed" type="act_walk_forward_unarmed_left_stance"/>
 		<action animation="walk_right_unarmed" type="act_walk_right_unarmed_left_stance"/>
 		<action animation="walk_left_unarmed" type="act_walk_left_unarmed_left_stance"/>
 		<action animation="walk_backward_unarmed" type="act_walk_backward_unarmed_left_stance"/>
@@ -7652,7 +7658,7 @@
 		<action animation="crouch_walk_adder" type="act_crouch_walk_right_to_left_adder"/>
 		<action animation="crouch_walk_adder" type="act_crouch_walk_left_to_right_adder"/>
 		<action animation="stand_non_combat" type="act_run_idle_unarmed"/>
-		<action animation="run_forward_unarmed" type="act_run_forward_unarmed"/>
+		<action animation="troll_run_forward_unarmed" type="act_run_forward_unarmed"/>
 		<action animation="run_right_unarmed" type="act_run_right_unarmed"/>
 		<action animation="run_left_unarmed" type="act_run_left_unarmed"/>
 		<action animation="run_backward_unarmed" type="act_run_backward_unarmed"/>
@@ -7662,7 +7668,7 @@
 		<action animation="run_left_to_right_unarmed" type="act_run_left_to_right_unarmed"/>
 		<action animation="turn_unarmed" type="act_turn_unarmed"/>
 		<action animation="stand_unarmed_left_stance" type="act_run_idle_unarmed_left_stance"/>
-		<action animation="run_forward_unarmed" type="act_run_forward_unarmed_left_stance"/>
+		<action animation="troll_run_forward_unarmed" type="act_run_forward_unarmed_left_stance"/>
 		<action animation="run_right_unarmed" type="act_run_right_unarmed_left_stance"/>
 		<action animation="run_left_unarmed" type="act_run_left_unarmed_left_stance"/>
 		<action animation="run_backward_unarmed" type="act_run_backward_unarmed_left_stance"/>
@@ -7932,7 +7938,7 @@
 		<action animation="run_left_to_right_heavy_thrown" type="act_run_left_to_right_heavy_thrown_left_stance"/>
 		<action animation="turn_unarmed_left_stance" type="act_turn_heavy_thrown_left_stance"/>
 		<action animation="stand_non_combat" type="act_walk_idle_unarmed"/>
-		<action animation="walk_forward_unarmed" type="act_walk_forward_unarmed"/>
+		<action animation="troll_walk_forward_unarmed" type="act_walk_forward_unarmed"/>
 		<action animation="walk_right_unarmed" type="act_walk_right_unarmed"/>
 		<action animation="walk_left_unarmed" type="act_walk_left_unarmed"/>
 		<action animation="walk_backward_unarmed" type="act_walk_backward_unarmed"/>
@@ -7941,7 +7947,7 @@
 		<action animation="walk_right_to_left_unarmed" type="act_walk_right_to_left_unarmed"/>
 		<action animation="walk_left_to_right_unarmed" type="act_walk_left_to_right_unarmed"/>
 		<action animation="stand_unarmed_left_stance" type="act_walk_idle_unarmed_left_stance"/>
-		<action animation="walk_forward_unarmed" type="act_walk_forward_unarmed_left_stance"/>
+		<action animation="troll_walk_forward_unarmed" type="act_walk_forward_unarmed_left_stance"/>
 		<action animation="walk_right_unarmed" type="act_walk_right_unarmed_left_stance"/>
 		<action animation="walk_left_unarmed" type="act_walk_left_unarmed_left_stance"/>
 		<action animation="walk_backward_unarmed" type="act_walk_backward_unarmed_left_stance"/>
